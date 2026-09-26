@@ -12,6 +12,10 @@ logging.basicConfig(filename='app.log', level=logging.INFO)
 
 app = FastAPI()
 
+@app.get("/health")
+def health_check():
+    print("Health check ok ok ok ok ok~@")
+    return {"status": "ok"}
 @app.post("/chat", response_model=QueryResponse)
 def chat(query_input: QueryInput):
     session_id = query_input.session_id or str(uuid.uuid4())
