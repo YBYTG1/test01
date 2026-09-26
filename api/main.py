@@ -15,7 +15,7 @@ app = FastAPI()
 @app.get("/health")
 def health_check():
 
-    return {"status": "ok"}
+    return {"status": "ok2"}
 @app.post("/chat", response_model=QueryResponse)
 def chat(query_input: QueryInput):
     session_id = query_input.session_id or str(uuid.uuid4())
