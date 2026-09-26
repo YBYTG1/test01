@@ -14,7 +14,7 @@ app = FastAPI()
 
 @app.get("/health")
 def health_check():
-    print("Health check ok ok ok ok ok~@")
+
     return {"status": "ok"}
 @app.post("/chat", response_model=QueryResponse)
 def chat(query_input: QueryInput):
